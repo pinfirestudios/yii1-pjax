@@ -1,0 +1,21 @@
+{
+    "name": "pinfirestudios/yii1-pjax",
+    "description": "Backport of Yii 2's Pjax widget for use in Yii 1",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Justin Cherniak",
+            "email": "justin@pinfirestudios.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "bower-asset/yii2-pjax": "^2.0"
+    },
+	"autoload": {
+		"psr-4": {
+			"pinfirestudios\\yii1pjax\\": "src/"
+		}
+	}
+}
