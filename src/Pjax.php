@@ -115,7 +115,7 @@ class Pjax extends CWidget
 				unset($options['tag']);
 			}
 
-            echo CHtml::tag($tag, array_merge([
+            echo CHtml::openTag($tag, array_merge([
                 'data-pjax-container' => '',
                 'data-pjax-push-state' => $this->enablePushState,
                 'data-pjax-replace-state' => $this->enableReplaceState,
