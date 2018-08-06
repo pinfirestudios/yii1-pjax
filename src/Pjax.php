@@ -176,19 +176,26 @@ class Pjax extends CWidget
     protected function requiresPjax()
 	{
 		$headers = getallheaders();
-		if (!isset($headers['X-PJAX']))
+
+		// Amazon ALB seems to change the case sensitivity on headers.
+		$headers = array_combine(
+			array_map('strtolower', array_keys($headers)),
+			array_values($headers)
+		);
+
+		if (!isset($headers['x-pjax']))
 		{
 			Yii::trace("No X-Pjax header", __METHOD__);
 			return false;
 		}
 
-		if (!isset($headers['X-PJAX-Container']))
+		if (!isset($headers['x-pjax-container']))
 		{
-			Yii::trace("No X-Pjax-Container header", __METHOD__);
+			Yii::trace("No x-pjax-container header", __METHOD__);
 			return false;
 		}
 
-        return explode(' ', $headers['X-PJAX-Container'])[0] === '#' . $this->options['id'];
+        return explode(' ', $headers['x-pjax-container'])[0] === '#' . $this->options['id'];
     }
 
     /**
