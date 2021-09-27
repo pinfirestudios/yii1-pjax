@@ -10,10 +10,7 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {
-        "bower-asset/yii2-pjax": "^2.0"
-    },
-	"autoload": {
+    "autoload": {
 		"psr-4": {
 			"pinfirestudios\\yii1pjax\\": "src/"
 		}

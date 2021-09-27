@@ -12,3 +12,11 @@ $this->endWiget();
 ```
 
 This has only been tested for our specific use case, so there may be bugs.
+
+# JS Libraries
+As Composer 2 no longer supports the bower-asset-plugin that Yii2 ships with, you must manually include
+the yii2-pjax JS library in your project.
+
+```
+npm install yii2-pjax
+```

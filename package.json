@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "yii2-pjax": "^2.0.7"
+  }
+}

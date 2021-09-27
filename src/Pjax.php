@@ -223,7 +223,7 @@ class Pjax extends CWidget
             $js .= "\njQuery(document).on($submitEvent, $formSelector, function (event) {jQuery.pjax.submit(event, $options);});";
 		}
 
-		$vendor = Yii::getPathOfAlias('vendor.bower-asset.yii2-pjax');
+		$vendor = Yii::getPathOfAlias('npm.yii2-pjax');
 		$assetsDir = Yii::app()->assetManager->publish($vendor);
 
 		$cs = Yii::app()->clientScript;
