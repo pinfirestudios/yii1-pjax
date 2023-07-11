@@ -232,5 +232,18 @@ class Pjax extends CWidget
         if ($js !== '') {
             $cs->registerScript(md5($js), $js, CClientScript::POS_READY);
         }
-    }
+	}
+
+	public static function isPjaxRequest() : bool
+	{
+		$headers = getallheaders();
+
+		// Amazon ALB seems to change the case sensitivity on headers.
+		$headers = array_combine(
+			array_map('strtolower', array_keys($headers)),
+			array_values($headers)
+		);
+
+		return isset($headers['x-pjax']);
+	}
 }
